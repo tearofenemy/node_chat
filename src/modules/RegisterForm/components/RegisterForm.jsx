@@ -6,7 +6,7 @@ import {ExclamationCircleTwoTone} from "@ant-design/icons"
 
 class RegisterForm extends Component {
     render() {
-        const isAuth = false
+        const isAuth = true
         return (
             <div> 
                 <div className="auth__top">
@@ -26,7 +26,7 @@ class RegisterForm extends Component {
                             <Input
                                 size="large"
                                 allowClear
-                                placeholder="Name"
+                                placeholder="Ваше имя"
                             />
                         </Form.Item>
                         <Form.Item name="password">
@@ -34,7 +34,7 @@ class RegisterForm extends Component {
                                 size="large"
                                 allowClear
                                 type="password"
-                                placeholder="Password"
+                                placeholder="Ваш пароль"
                             />
                         </Form.Item>
                         <Form.Item name="confirmPassword">
@@ -42,7 +42,7 @@ class RegisterForm extends Component {
                                 size="large"
                                 allowClear
                                 type="password"
-                                placeholder="Confirm Password"
+                                placeholder="Повторите пароль"
                             />
                         </Form.Item>
                         <Form.Item>

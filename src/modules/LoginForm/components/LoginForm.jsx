@@ -25,7 +25,7 @@ class LoginForm extends Component {
                                 size="large"
                                 allowClear
                                 type="password"
-                                placeholder="Password"
+                                placeholder="Ваш пароль"
                             />
                         </Form.Item>
                         <Form.Item>
