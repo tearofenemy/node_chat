@@ -46,6 +46,20 @@
         opacity: 0.5;
     }
 
+    &__attachments {
+        display: flex;
+        margin-bottom: 5px;
+        &-item {
+            margin-right: 10px;
+            cursor: pointer;
+            img {
+                width: 45px;
+                height: 45px;
+                border-radius: 8px;
+            }
+        }
+    }
+
     &--isMe {
         display: flex;
         flex-direction: row-reverse;

@@ -6,8 +6,8 @@ import {Route} from 'react-router-dom'
 function App() {
   return (
     <div className="wrapper">
-      <Route path="/im" component={Home}/>
-      <Route path={['/', '/signin']} component={Auth}/>
+      <Route exact path={['/', '/signin', '/signup']} component={Auth}/>
+      <Route exact path="/im" component={Home}/>
     </div>  
   );
 }

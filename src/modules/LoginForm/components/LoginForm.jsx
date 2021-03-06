@@ -1,6 +1,7 @@
 import React, {Component} from 'react'
 import {Button, Block} from '../../../components'
 import {Form, Input} from "antd"
+import {MailOutlined, LockOutlined} from '@ant-design/icons'
 import {Link} from "react-router-dom"
 
 class LoginForm extends Component {
@@ -17,7 +18,8 @@ class LoginForm extends Component {
                             <Input 
                                 size="large"
                                 allowClear 
-                                placeholder="E-Mail" 
+                                placeholder="E-Mail"
+                                prefix={<MailOutlined className="site-form-item-icon"/>} 
                             />
                         </Form.Item>
                         <Form.Item name="password">
@@ -26,6 +28,7 @@ class LoginForm extends Component {
                                 allowClear
                                 type="password"
                                 placeholder="Ваш пароль"
+                                prefix={<LockOutlined className="site-form-item-icon"/>}
                             />
                         </Form.Item>
                         <Form.Item>

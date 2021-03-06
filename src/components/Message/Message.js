@@ -8,7 +8,7 @@ import './Message.scss'
 import readed from '../../assets/readed.svg'
 import noreaded from '../../assets/noreaded.svg'
 
-const Message = ({avatar, user, text, date, isMe, isReaded}) => (
+const Message = ({avatar, user, text, date, isMe, isReaded, attachments}) => (
     <div className={classNames('message', {'message--isMe': isMe})}> 
         <div className="message__content">
             {isMe && isReaded ?
@@ -18,14 +18,25 @@ const Message = ({avatar, user, text, date, isMe, isReaded}) => (
                 <img src={avatar} alt={`Avatar ${user}`}/>
             </div>
             <div className="message__info">
-                <div className="message__bubble">
-                    <div className="message__text">
-                        <p>{text}</p>
+                <div>
+                    <div className="message__bubble">
+                        <div className="message__text">
+                            <p>{text}</p>
+                        </div>
                     </div>
+                    <div className="message__attachments">
+                        {attachments &&
+                            attachments.map(item => (
+                                <div className="message__attachments-item">
+                                    <img src={item.url} alt={item.fileName}/>       
+                                </div>
+                            ))
+                        }
+                    </div>
+                    <span className="message__date">
+                        {formatDistanceToNow(date, {addSuffix: true, locale: ruLocale})}
+                    </span>
                 </div>
-                <span className="message__date">
-                    {formatDistanceToNow(date, {addSuffix: true, locale: ruLocale})}
-                </span>
             </div>
         </div> 
     </div>  
@@ -39,7 +50,8 @@ Message.propTypes = {
     avatar: PropTypes.string,
     text: PropTypes.string,
     date: PropTypes.string,
-    user: PropTypes.object
+    user: PropTypes.object,
+    attachments: PropTypes.array
 }
 
 export default Message
