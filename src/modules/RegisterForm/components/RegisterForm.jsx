@@ -2,6 +2,7 @@ import React from 'react'
 import {Button, Block} from '../../../components'
 import {Form, Input} from "antd"
 import {Link} from "react-router-dom"
+import { validateField } from '../../../utils/helpers'
 import {ExclamationCircleTwoTone, UserOutlined, LockOutlined, MailOutlined} from "@ant-design/icons"
 
 const RegisterForm = props => {
@@ -25,7 +26,7 @@ const RegisterForm = props => {
             </div>
             <Block>
                 {isAuth ? <Form onSubmit={handleSubmit} name="auth-form" className="auth-form">
-                    <Form.Item help={!touched.email ? " " : errors.email} validateStatus={!touched.email ? '' : errors.email ? 'error' : 'success'} hasFeedback>
+                    <Form.Item help={!touched.email ? " " : errors.email} validateStatus={validateField('email', touched, errors)} hasFeedback>
                         <Input 
                             id="email"
                             size="large"
@@ -37,7 +38,7 @@ const RegisterForm = props => {
                             value={values.email}
                         />    
                     </Form.Item>
-                    <Form.Item help={!touched.name ? " " : errors.name} validateStatus={!touched.name ? '' : errors.name ? 'error' : 'success'} hasFeedback>
+                    <Form.Item help={!touched.name ? " " : errors.name} validateStatus={validateField('name', touched, errors)} hasFeedback>
                         <Input
                             id="name"
                             size="large"
@@ -49,7 +50,7 @@ const RegisterForm = props => {
                             value={values.name}
                         />
                     </Form.Item>
-                    <Form.Item help={!touched.password ? " " : errors.password} validateStatus={!touched.password ? '' : errors.password ? 'error' : 'success'} hasFeedback>
+                    <Form.Item help={!touched.password ? " " : errors.password} validateStatus={validateField('password', touched, errors)} hasFeedback>
                         <Input
                             id="password"
                             size="large"
@@ -62,7 +63,7 @@ const RegisterForm = props => {
                             value={values.password}
                         />
                     </Form.Item>
-                    <Form.Item help={!touched.confirmPassword ? " " : errors.confirmPassword} validateStatus={!touched.confirmPassword ? '' : errors.confirmPassword ? 'error' : 'success'} hasFeedback>
+                    <Form.Item help={!touched.confirmPassword ? " " : errors.confirmPassword} validateStatus={validateField('confirmPassword', touched, errors)} hasFeedback>
                         <Input
                             id="confirmPassword"
                             size="large"
