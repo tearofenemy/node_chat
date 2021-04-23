@@ -12,10 +12,9 @@ export default withFormik({
     validate: values => {
         let errors = {}
 
-        const validate = validateFunc({isAuth: false})
-
-        console.log(Object.keys(values))
-        Object.keys(values).forEach(key => validate[key] && validate[key](errors, values[key]))
+        validateFunc({isAuth: false})
+        //console.log(Object.keys(values))
+        //Object.keys(values).forEach(key => validate[key] && validate[key](errors, values[key]))
         
         return errors
     },

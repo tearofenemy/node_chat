@@ -135,6 +135,51 @@
         }
     }
 
+    &--isAudio {
+        #{$self}__bubble {
+            width: 270px;
+            position: relative;
+            overflow: hidden;
+        }
+        #{$self}__audio {
+            audio {
+                display: none;
+            }
+            &-progress {
+                background-color: #418fff;
+                position: absolute;
+                top: 0;
+                left: 0;
+                transition: width 0.5s ease;  
+            }
+            &-info {
+                display: flex;
+                align-items: center;
+                position: relative;
+                justify-content: space-between;
+            }
+            &-btn {
+                button {
+                    cursor: pointer;
+                    background: #0F3997;
+                    width: 28px;
+                    height: 28px;
+                    border-radius: 30px;
+                    border: 0;
+                    img {
+                        height: 11px;
+                    }
+                }
+            }
+            &-duration {
+                color: #fff;
+                font-weight: 500;
+                opacity: 0.5;
+                font-size: 12px;
+            }
+        }
+    }
+
     @keyframes typingAnimation {
         from {
             opacity: 0
