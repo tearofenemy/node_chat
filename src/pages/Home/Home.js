@@ -6,24 +6,24 @@ import './Home.scss'
 const Home = () => (
     <section className="home">
         
-        <Message
+        {/* <Message
             avatar='https://sun9-34.userapi.com/s/v1/ig2/W0ogP05Mpv8gEq5vu111j9JDJCcaslq5HykpCz1FZJBLqVszhGuIkxtxlliUpdfTQ-GOmGTVVqbsflMWaSl4BKZh.jpg?size=100x0&quality=96&crop=24,219,912,912&ava=1'
             date={new Date()}
             audio="https://notificationsounds.com/storage/sounds/file-sounds-1143-clearly.mp3"
-        />
+        /> */}
 
 
-        {/* <Dialogs items={[
+        <Dialogs items={[
             {
-                _id: Math.random(),
+                _id: 'd8578edf8458ce06fbc5bb76a58c5ca4',
                 user: {
                     _id: 1,
-                    fullName: 'Test Username',
+                    fullName: 'Федор Достаевский',
                     avatar: null
                 },
                 text: 'Some text for test application',
                 isReaded: false,
-                created_at: new Date(2019, 31, 12)
+                created_at: new Date()
             },
             {
                 _id: Math.random(),
@@ -36,7 +36,7 @@ const Home = () => (
                 isReaded: false,
                 created_at: new Date()
             }
-        ]}/> */}
+        ]}/>
         
         
         {/* <Message

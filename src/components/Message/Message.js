@@ -11,7 +11,7 @@ import {convertCurrentTime} from '../../utils/helpers'
 
 import './Message.scss'
 
-const MessageAudio = (audio) => {
+const MessageAudio = ({audioSrc}) => {
 
     const [isPlaying, setPlaying] = useState(false);
     const [progress, setProgress] = useState(0);
@@ -43,7 +43,7 @@ const MessageAudio = (audio) => {
 
     return (
         <div className="message__audio">
-            <audio ref={audioEl} src={audio} preload="auto"/>
+            <audio ref={audioEl} src={audioSrc} preload="auto"/>
             <div className="message__audio-progress" style={{width: progress + '%', height: '100%'}}></div>
             <div className="message__audio-info">
                 <div className="message__audio-btn">
@@ -88,7 +88,7 @@ const Message = ({avatar, user, text, date, isMe, isReaded, attachments, audio, 
                                 </div>
                             )}
                             {audio && 
-                                <MessageAudio audio/>
+                                <MessageAudio audioSrc={audio}/>
                             }
                         </div>
                     )}
