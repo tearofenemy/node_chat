@@ -12,12 +12,14 @@ const Avatar = ({user})  => {
             />
         );
     } else {
-        const colors = generateAvatar(user._id);
-        const firstCharFromUserFullname = user.fullName.charCodeAt(0);
-        return <div></div>
+        const {color, colorLighten} = generateAvatar(user._id);
+        const firstCharFromUserFullname = user.fullName[0].toUpperCase();
+        return <div 
+                    style={{background: `linear-gradient(135deg, ${color}, ${colorLighten})`}} 
+                    className="avatar avatar--symbol">
+                    {firstCharFromUserFullname}
+                </div>
     }
 }
-
-
 
 export default Avatar

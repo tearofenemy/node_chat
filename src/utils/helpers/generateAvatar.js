@@ -10,7 +10,7 @@ export default (hash) => {
                     .split("")
                     .map(char => getCorrectIndex(char.charCodeAt(0)));
     return {
-        color: tinycolor({r, g, b}).toHexString(),
+        color: tinycolor({r, g, b}).lighten(15).toHexString(),
         colorLighten: tinycolor({r, g, b}).lighten(40).toHexString()
     };
 }

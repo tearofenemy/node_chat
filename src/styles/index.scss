@@ -1,6 +1,8 @@
 @import "antd/dist/antd.css";
 @import "~reset-css";
 
+@import "../styles/layouts/chat";
+
 body, html, #root, .wrapper {
     height: 100%;
     color: #202020;
@@ -8,6 +10,7 @@ body, html, #root, .wrapper {
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
     font-size: 15px;
+    background-color: #f4f7fd;
 }
 
 * {
